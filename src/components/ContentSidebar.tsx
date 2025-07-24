@@ -22,7 +22,7 @@ const navLinks: NavLinkItem[] = [
     label: "Streams",
     collapsible: true,
     to: "my-streams",
-    subLinks: [{ label: "+ Create new stream", to: "search/sources?q=" }],
+    subLinks: [{ label: "+ Create new stream", to: "search/sources" }],
   },
   {
     label: "Library",
@@ -34,10 +34,10 @@ const navLinks: NavLinkItem[] = [
   {
     label: "Studio",
     collapsible: true,
-    to: "image",
+    to: "studio",
     subLinks: [
-      { label: "Create image", to: "image" },
-      { label: "Create video", to: "video" },
+      { label: "Create image", to: "studio/image" },
+      { label: "Create video", to: "studio/video" },
     ],
   },
 ];
@@ -93,10 +93,17 @@ const ContentSidebar = () => {
                   {/* Label (navigates) */}
                   <span
                     className="cursor-pointer"
-                    onClick={() => link.to && navigate(link.to)}
+                    onClick={() => {
+                      if (link.label === "Studio") {
+                        navigate("studio/image");
+                      } else if (link.to) {
+                        navigate(link.to);
+                      }
+                    }}
                   >
                     {link.label}
                   </span>
+
 
                   {/* Chevron (toggles) */}
                   <button onClick={() => toggleSection(link.label)}>

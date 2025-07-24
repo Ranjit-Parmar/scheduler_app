@@ -10,7 +10,9 @@ const Team = () => {
           Invite team members and manage your team
         </h2>
         <p className="mb-4 text-base">
-          <strong>Team</strong> is where you invite team members and manage your team. To log in, your new team member MUST use the email you invited them with.
+          <strong>Team</strong> is where you invite team members and manage your
+          team. To log in, your new team member MUST use the email you invited
+          them with.
         </p>
         <p className="mt-2 flex items-center gap-2 text-blue-800 text-base font-semibold hover:underline cursor-pointer">
           <CircleQuestionMark size="18px" strokeWidth="2.5px" />
@@ -21,7 +23,9 @@ const Team = () => {
       {/* Add Member Section */}
       <section className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 space-y-6">
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-gray-800">Add a new member</h2>
+          <h2 className="text-xl font-semibold text-gray-800">
+            Add a new member
+          </h2>
           <input
             name="email"
             placeholder="Email address"
@@ -31,14 +35,26 @@ const Team = () => {
         </div>
 
         <div className="space-y-4 flex justify-between items-center">
-          <h3 className="text-lg font-medium text-gray-700">Select which profiles they can access</h3>
+          <h3 className="text-lg font-medium text-gray-700">
+            Select which profiles they can access
+          </h3>
           <div className="flex gap-3 flex-wrap">
-            <button className="px-4 py-1 bg-blue-100 text-blue-700 rounded hover:bg-blue-200 text-sm">Select all</button>
-            <button className="px-4 py-1 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 text-sm">Clear all</button>
-            <button className="p-2 bg-gray-100 rounded hover:bg-gray-200 text-gray-700" title="Grid View">
+            <button className="px-4 py-1 bg-blue-100 text-blue-700 rounded hover:bg-blue-200 text-sm">
+              Select all
+            </button>
+            <button className="px-4 py-1 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 text-sm">
+              Clear all
+            </button>
+            <button
+              className="p-2 bg-gray-100 rounded hover:bg-gray-200 text-gray-700"
+              title="Grid View"
+            >
               <Grip size={18} />
             </button>
-            <button className="p-2 bg-gray-100 rounded hover:bg-gray-200 text-gray-700" title="List View">
+            <button
+              className="p-2 bg-gray-100 rounded hover:bg-gray-200 text-gray-700"
+              title="List View"
+            >
               <List size={18} />
             </button>
           </div>
@@ -52,7 +68,9 @@ const Team = () => {
       {/* Current Team Section */}
       <section className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 space-y-6">
         <div className="flex justify-between items-center">
-          <h2 className="text-xl font-semibold text-gray-800">Current Team (1 out of 1)</h2>
+          <h2 className="text-xl font-semibold text-gray-800">
+            Current Team (1 out of 1)
+          </h2>
           <h2 className="text-base font-medium text-gray-600">Permissions</h2>
         </div>
 

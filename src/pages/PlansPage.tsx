@@ -2,7 +2,6 @@ import { CirclePlay } from "lucide-react";
 import schedule_book from "../assets/schedule_book.jpg";
 
 const PlansPage = () => {
-
   const videos = [
     { title: "1. How Plans work", link: "#" },
     { title: "2. Creating a new Plan", link: "#" },
@@ -11,19 +10,22 @@ const PlansPage = () => {
   ];
 
   return (
-     <div className="space-y-10">
+    <div className="space-y-10">
       {/* Header Section */}
       <header className="bg-blue-50 border border-blue-200 shadow-sm rounded-lg p-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex-1">
           <h1 className="text-3xl font-bold text-gray-800 mb-2 leading-tight">
-            Watch our training videos<br />to get up to speed!
+            Watch our training videos
+            <br />
+            to get up to speed!
           </h1>
           <div className="mt-4">
             <h3 className="text-lg font-semibold text-gray-700">
               Josh from Scheduler
             </h3>
             <p className="text-gray-600">
-              Hey Ranjit! 👋 This is where you learn our most powerful features. 💪
+              Hey Ranjit! 👋 This is where you learn our most powerful features.
+              💪
             </p>
           </div>
         </div>
@@ -71,7 +73,7 @@ const PlansPage = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default PlansPage
+export default PlansPage;

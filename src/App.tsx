@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Layout from "./layouts/Layout";
 import DashboardLayout from "./layouts/DashboardLayout";
 
@@ -26,7 +31,13 @@ import Content from "./components/Content";
 import StreamsPage from "./pages/StreamsPage";
 import LibraryPage from "./pages/LibraryPage";
 import FavoritesPage from "./pages/FavoritesPage";
-import StudioPage from "./pages/StudioPage";
+import StudioImage from "./pages/StudioImage";
+import StudioVideo from "./pages/StudioVideo";
+import CreateNewStream from "./pages/CreateNewStream";
+import PostsLayout from "./layouts/PostsLayout";
+import PlannedDashboard from "./pages/Dashboard";
+import CreateBucketsPage from "./pages/CreateBucketsPage";
+import DraftsPage from "./pages/DraftsPage";
 
 function App() {
   return (
@@ -38,48 +49,56 @@ function App() {
 
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<Navigate to="posts" replace />} />
-          <Route path="posts" element={<Dashboard />} />
-          
+
+          {/* Posts with nested layout */}
+          <Route path="posts" element={<PostsLayout />}>
+            <Route index element={<Navigate to="planned" replace />} />
+            <Route path="planned" element={<PlannedDashboard />} />
+            <Route path="buckets" element={<CreateBucketsPage />} />
+            <Route path="drafts" element={<DraftsPage />} />
+          </Route>
 
           {/* ✅ Settings with nested layout */}
           <Route path="settings" element={<SettingsLayout />}>
             <Route index element={<Navigate to="social_networks" replace />} />
-            <Route path="social_networks" element={<SettingsPage/>} />
-            <Route path="account" element={<Account/>} />
-            <Route path="team" element={<Team/>} />
-            <Route path="help_desk" element={<HelpDesk/>} />
+            <Route path="social_networks" element={<SettingsPage />} />
+            <Route path="account" element={<Account />} />
+            <Route path="team" element={<Team />} />
+            <Route path="help_desk" element={<HelpDesk />} />
           </Route>
 
           {/* Teams with nested layout */}
           <Route path="training" element={<TrainingLayout />}>
             <Route index element={<Navigate to="getting_started" replace />} />
-            <Route path="getting_started" element={<GettingStartedPage/>} />
-            <Route path="plans" element={<PlansPage/>} />
-            <Route path="buckets" element={<BucketsPage/>} />
-            <Route path="content" element={<ContentPage/>} />
+            <Route path="getting_started" element={<GettingStartedPage />} />
+            <Route path="plans" element={<PlansPage />} />
+            <Route path="buckets" element={<BucketsPage />} />
+            <Route path="content" element={<ContentPage />} />
           </Route>
 
           {/* History with nested layout */}
           <Route path="history" element={<HistoryLayout />}>
             <Route index element={<Navigate to="posted" replace />} />
-            <Route path="posted" element={<PostedPage/>} />
-            <Route path="failed" element={<FailedPage/>} />
+            <Route path="posted" element={<PostedPage />} />
+            <Route path="failed" element={<FailedPage />} />
           </Route>
 
           {/* Plans with nested layout */}
           <Route path="plans" element={<PlansLayout />}>
-            <Route index element={<CalendarPage/>} />
+            <Route index element={<CalendarPage />} />
           </Route>
 
           {/* Contents with nested layout */}
-          <Route path="content" element={<ContentLayout />} >
-            <Route index element={<Content/>} />
-            <Route path="streams" element={<StreamsPage/>} />
-            <Route path="library" element={<LibraryPage/>} />
-            <Route path="favorites" element={<FavoritesPage/>} />
-            <Route path="studio" element={<StudioPage/>} />
+          <Route path="content" element={<ContentLayout />}>
+            <Route index element={<Content />} />
+            <Route path="my-streams" element={<StreamsPage />} />
+            <Route path="search/sources" element={<CreateNewStream />} />
+            <Route path="library" element={<LibraryPage />} />
+            <Route path="favorites" element={<FavoritesPage />} />
+            <Route path="studio" element={<Navigate to="studio/image" replace />} />
+            <Route path="studio/image" element={<StudioImage />} />
+            <Route path="studio/video" element={<StudioVideo />} />
           </Route>
-
         </Route>
       </Routes>
     </Router>

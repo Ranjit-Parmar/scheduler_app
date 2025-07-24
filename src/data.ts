@@ -1,7 +1,7 @@
 // Icons or images for contentData
-import image1 from "./assets/icon1.png";
-import image2 from "./assets/icon2.png";
-import image3 from "./assets/icon3.png";
+import image1 from "./assets/bucket.png";
+import image2 from "./assets/fork.png";
+import image3 from "./assets/fantasy.png";
 import star_active from "./assets/star_active.png"; // for ratings
 
 // Dummy questions
